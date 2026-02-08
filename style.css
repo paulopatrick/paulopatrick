@@ -716,7 +716,7 @@ body {
 
 .typewriter-text p {
     margin: 0.8rem 0;
-    line-height: 1.6;
+    line-height: 2;
     color: var(--text-color);
 }
 
@@ -799,6 +799,15 @@ body {
     color: var(--neon-pink);
     animation: pulse 2s infinite;
 }
+
+.project-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
 
 /* Animações */
 @keyframes pulse {
