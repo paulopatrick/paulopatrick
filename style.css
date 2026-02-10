@@ -107,9 +107,12 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 20rem 5rem;
     position: relative;
     overflow: hidden;
+    justify-content: center; 
+    align-items: center;
+    height: 100%;
 }
 
 .glitch {
@@ -152,6 +155,19 @@ body {
         blink-caret 0.75s step-end infinite;
     max-width: fit-content;
 }
+
+/* 📱 Ajuste para celular */
+@media (max-width: 768px) {
+    .typewriter {
+        white-space: normal;        /* permite quebrar linha */
+        text-align: center;
+        max-width: 90vw;            /* respeita largura da tela */
+        font-size: 1.2rem;          /* reduz fonte */
+        border-right: none;         /* remove cursor lateral */
+        animation: none;            /* opcional: remove animação */
+    }
+}
+
 
 /* Cyber Content */
 .cyber-content {
