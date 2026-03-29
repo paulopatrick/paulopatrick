@@ -162,7 +162,7 @@ body {
         white-space: normal;        /* permite quebrar linha */
         text-align: center;
         max-width: 90svw;            /* respeita largura da tela */
-        max-height: 100svh;
+        max-height: 80svh;
         font-size: 1.2rem;          /* reduz fonte */
         border-right: none;         /* remove cursor lateral */
         animation: none;            /* opcional: remove animação */
