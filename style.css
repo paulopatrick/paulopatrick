@@ -125,11 +125,22 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 7rem 1.5rem 3rem;
+    padding: 8rem 1.5rem 4.5rem;
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 900px;
+}
+
+.typewriter {
+    border-right: 3px solid var(--neon-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 1.4rem auto 0.6rem;
+    animation:
+        typing 3.5s steps(40,end),
+        blink-caret 0.75s step-end infinite;
+    max-width: fit-content;
 }
 
 .glitch {
@@ -1070,5 +1081,108 @@ body {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+/* Neon Title Style - replicando PATRICKInc.png */
+.neon-title {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 1.2rem;
+    padding-bottom: 0.4rem;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    line-height: 1;
+    font-style: italic;
+}
+
+.neon-title .patrick {
+    display: block;
+    color: #71f0ff;
+    text-shadow:
+        0 0 12px #58d7ff,
+        0 0 20px #58d7ff,
+        0 0 30px #26b4f8,
+        0 0 40px #0f8bf8,
+        0 0 60px #0f8bf8;
+    letter-spacing: 12px;
+    animation: neon-flicker 3.5s infinite alternate;
+}
+
+.neon-title .inc {
+    display: inline-block;
+    color: #f2daff;
+    text-shadow:
+        0 0 10px #d4a7ff,
+        0 0 18px #c589ff,
+        0 0 30px #b071ff;
+    font-size: 0.58em;
+    letter-spacing: 6px;
+    margin-top: 0.0em;
+    margin-left: 0.35em;
+    position: relative;
+    top: 0.0em;
+    animation: neon-flicker-inc 3.5s infinite alternate;
+}
+
+.neon-title::after,
+.neon-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    height: 1px;
+    border-radius: 999px;
+}
+
+.neon-title::after {
+    bottom: -34px;
+    background: linear-gradient(90deg, transparent 0%, #05d9e8 18%, #d300c5 42%, #05d9e8 70%, transparent 100%);
+    box-shadow:
+        0 0 12px #05d9e8,
+        0 0 22px #05d9e8,
+        0 0 5px #d300c5,
+        0 0 14px #d300c5;
+}
+
+.neon-title::before {
+    bottom: -42px;
+    width: 85%;
+    background: linear-gradient(90deg, transparent 0%, #d300c5 12%, #05d9e8 50%, #d300c5 86%, transparent 100%);
+    box-shadow: 0 0 10px #d300c5;
+}
+
+@keyframes neon-flicker {
+    0%, 100% {
+        text-shadow:
+            0 0 12px #58d7ff,
+            0 0 20px #58d7ff,
+            0 0 32px #26b4f8,
+            0 0 45px #0f8bf8;
+    }
+    50% {
+        text-shadow:
+            0 0 7px #58d7ff,
+            0 0 16px #58d7ff,
+            0 0 26px #26b4f8,
+            0 0 34px #0f8bf8;
+    }
+}
+
+@keyframes neon-flicker-inc {
+    0%, 100% {
+        text-shadow:
+            0 0 12px #d4a7ff,
+            0 0 20px #c589ff,
+            0 0 29px #b071ff;
+    }
+    50% {
+        text-shadow:
+            0 0 5px #d4a7ff,
+            0 0 14px #c589ff,
+            0 0 22px #b071ff;
+    }
 }
 
