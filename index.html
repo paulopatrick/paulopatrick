@@ -37,7 +37,7 @@
         <nav class="cyber-nav">
             <ul>
                 <li><a href="index.html" class="active" data-text="HOME">HOME</a></li>
-                <li><a href="#cyber-intron" data-text="SOBRE">SOBRE</a></li>
+                <li><a href="#cyber-intro" data-text="SOBRE">SOBRE</a></li>
                 <li><a href="#blog-section" data-text="BLOG">BLOG</a></li>
                 <li><a href="#projects-section" data-text="PROJETOS">PROJETOS</a></li>
             </ul>
@@ -47,7 +47,7 @@
     <main class="cyber-main">
 
     <!-- Seção de Apresentação -->
-    <section class="cyber-intro">
+    <section id="cyber-intro" class="cyber-intro">
 
         <div class="intro-content">
             <div class="terminal-window">
@@ -94,8 +94,11 @@
                         <span class="status-label">ABORDAGEM:</span>
                         <span class="status-value high">Teoria & prática</span>
                     </div>
+                    
                 </div>
+                
             </div>
+            
         </div>
     </section>
 <!--
@@ -253,7 +256,15 @@
             <span class="command">cat sobre.txt</span>
             <span class="cursor">|</span>
         </div>
+        <div class="cyber-clock">
+            <div class="clock-info">
+                <div id="digital-clock">00:00:00</div>
+                <div id="digital-date">5 de abril de 2026</div>
+            </div>
+        </div>
     </footer>
+
+    <button id="back-to-top" class="back-to-top-btn" title="Voltar ao topo" style="display: none;">↑</button>
 
     <div class="image-modal" id="image-modal" aria-hidden="true">
         <div class="image-modal-backdrop"></div>

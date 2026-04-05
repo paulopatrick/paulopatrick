@@ -11,48 +11,6 @@ window.addEventListener('load', function() {
 
 // Terminal typing effect for multiple elements
 document.addEventListener('DOMContentLoaded', function() {
-    // Terminal commands animation
-    const commands = [
-        "scanning network...",
-        "checking firewall...",
-        "analyzing protocols...",
-        "system secure.",
-        "access granted."
-    ];
-    
-    const terminalLine = document.querySelector('.terminal-line .command');
-    if (terminalLine) {
-        let currentCommand = 0;
-        let currentChar = 0;
-        let isDeleting = false;
-        
-        function typeCommand() {
-            const fullCommand = commands[currentCommand];
-            
-            if (isDeleting) {
-                terminalLine.textContent = fullCommand.substring(0, currentChar - 1);
-                currentChar--;
-            } else {
-                terminalLine.textContent = fullCommand.substring(0, currentChar + 1);
-                currentChar++;
-            }
-            
-            if (!isDeleting && currentChar === fullCommand.length) {
-                isDeleting = true;
-                setTimeout(typeCommand, 1000);
-            } else if (isDeleting && currentChar === 0) {
-                isDeleting = false;
-                currentCommand = (currentCommand + 1) % commands.length;
-                setTimeout(typeCommand, 500);
-            } else {
-                const typingSpeed = isDeleting ? 50 : 100;
-                setTimeout(typeCommand, typingSpeed);
-            }
-        }
-        
-        setTimeout(typeCommand, 1000);
-    }
-    
     // Add hover effects to cyber cards
     const cyberCards = document.querySelectorAll('.cyber-card');
     cyberCards.forEach(card => {
@@ -306,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Efeito de terminal no footer
     const terminalLine = document.querySelector('.terminal-line .command');
+    const cursor = document.querySelector('.terminal-line .cursor');
     if (terminalLine) {
         const commands = [
             "scanning network...",
@@ -325,26 +284,108 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isDeleting) {
                 terminalLine.textContent = fullCommand.substring(0, currentChar - 1);
                 currentChar--;
+                if (cursor) {
+                    cursor.classList.add('typing');
+                    cursor.style.opacity = '1';
+                }
             } else {
                 terminalLine.textContent = fullCommand.substring(0, currentChar + 1);
                 currentChar++;
+                if (cursor) {
+                    cursor.classList.add('typing');
+                    cursor.style.opacity = '1';
+                }
             }
             
             if (!isDeleting && currentChar === fullCommand.length) {
                 isDeleting = true;
-                setTimeout(typeCommand, 1000);
+                if (cursor) {
+                    cursor.classList.remove('typing');
+                    cursor.style.opacity = '0';
+                }
+                setTimeout(typeCommand, Math.random() * 1000 + 1500); // Random pause 1.5-2.5s
             } else if (isDeleting && currentChar === 0) {
                 isDeleting = false;
                 currentCommand = (currentCommand + 1) % commands.length;
-                setTimeout(typeCommand, 500);
+                if (cursor) {
+                    cursor.classList.remove('typing');
+                    cursor.style.opacity = '0';
+                }
+                setTimeout(typeCommand, Math.random() * 500 + 300); // Random pause 0.3-0.8s
             } else {
-                const typingSpeed = isDeleting ? 50 : 100;
+                const baseSpeed = isDeleting ? 30 : 60;
+                const typingSpeed = baseSpeed + Math.random() * 40; // Vary speed ±20ms
                 setTimeout(typeCommand, typingSpeed);
             }
         }
         
         setTimeout(typeCommand, 1000);
     }
+});
+
+// Digital Clock
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    
+    const day = now.getDate();
+    const monthNames = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    const dateString = `${day} de ${month} de ${year}`;
+    
+    const clockDisplay = document.getElementById('digital-clock');
+    const dateDisplay = document.getElementById('digital-date');
+    
+    if (clockDisplay) {
+        clockDisplay.textContent = timeString;
+    }
+    if (dateDisplay) {
+        dateDisplay.textContent = dateString;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Show/hide back to top button on scroll
+    window.addEventListener('scroll', function() {
+        const clock = document.querySelector('.cyber-clock');
+        if (backToTopBtn) {
+            const scrolled = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.body.scrollHeight;
+            const nearTop = scrolled > 200;
+            const nearBottom = scrolled + windowHeight >= documentHeight - 100; // 100px threshold
+
+            if (nearTop) {
+                backToTopBtn.style.display = 'flex';
+                if (nearBottom && clock) {
+                    clock.classList.add('moved');
+                } else if (clock) {
+                    clock.classList.remove('moved');
+                }
+            } else {
+                backToTopBtn.style.display = 'none';
+                if (clock) clock.classList.remove('moved');
+            }
+        }
+    });
 });
 
 // Particle effect for background (to be implemented in particles.js)

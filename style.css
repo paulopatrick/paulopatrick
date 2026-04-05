@@ -11,6 +11,10 @@
     --glow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--dark-bg);
     color: var(--text-color);
@@ -408,6 +412,10 @@ body {
 }
 
 .cursor {
+    /* animation removed */
+}
+
+.cursor.typing {
     animation: blink 1s step-end infinite;
 }
 
@@ -1070,6 +1078,65 @@ body {
     animation: pulse 2s infinite;
 }
 
+.cyber-clock {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cyber-clock.moved {
+    transform: translateX(-60px);
+}
+
+.clock-info {
+    text-align: right;
+}
+
+.cyber-clock #digital-clock {
+    color: var(--matrix-green);
+    font-weight: bold;
+}
+
+.cyber-clock #digital-date {
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(5, 217, 232, 0.1);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1000;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--neon-blue);
+    color: var(--dark-bg);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
 
 /* Animações */
 @keyframes pulse {
