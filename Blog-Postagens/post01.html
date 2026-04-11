@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Segurança Cibernética | Paulo Patrick</title>
+    <link rel="stylesheet" href="../cyberpunk-fonts.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="cyber-loader"></div>
+    <div class="cyber-grid"></div>
+
+    <header class="cyber-header">
+        <div class="terminal-bar">
+            <div class="terminal-controls">
+                <span class="terminal-control red"></span>
+                <span class="terminal-control yellow"></span>
+                <span class="terminal-control green"></span>
+            </div>
+            <span class="terminal-title">patrickinc@defesa_cibernetica:~</span>
+        </div>
+
+        <section class="hero">
+            <h1 class="neon-title">
+                <span class="patrick">Paulo</span>
+                <span class="inc">Patrick</span>
+            </h1>
+            <div class="scanlines"></div>
+        </section>
+        <p class="typewriter">
+            Defesa Cibernética • Redes • Monitoramento (SNOC) • Segurança da Informação
+        </p>
+
+        <nav class="cyber-nav">
+            <ul>
+                <li><a href="../index.html" class="active" data-text="HOME">HOME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cyber-main">
+        <section class="cyber-section article-section">
+
+            <article class="blog-post article-shell">
+                <div class="project-header article-hero">
+                    <div>
+                        <p class="article-kicker">Análise de segurança eletrônica IP</p>
+                        <h1>Apresentação de algumas situações que podem prejudicar um sistema de segurança eletrônico IP</h1>
+                    </div>
+                </div>
+
+                <div class="post-content article-content">
+                    <div class="article-panel">
+                        <h3><span class="hex">0x01</span> Visão Geral</h3>
+                        <p>Imagine um condomínio residencial com 500 famílias, facilmente milhares de pessoas vivendo alí confiando fielmente em um sistema de segurança eletrônica IP, imaginou? Em um país onde a segurança pública já não é muito confiável, a depender da localização é ainda mais preocupante, a responsabilidade de uma empresa de segurança vai muito além da contratual, aqui se fala em vidas humanas e sua integridade.</p>
+                        <p>Diante desse cenário, é preciso garantir com alta taxa de certeza que o sistema esteja protegido contra as ameaças mais comuns, a fim de evitar impactos nos equipamentos e sistemas de segurança, dito isso porque são estes que irão proteger os moradores de possíveis ataques diretos e indiretos, físicos e lógicos.</p>
+                        <p>Aqui serão apresentados alguns dos ataques mais comuns aos sistemas conectados à internet, os quais são:</p>
+                        <div class="article-accordion" data-accordion-group>
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">01</span>
+                                        <span class="article-accordion-title">Acesso indevido por credenciais fracas</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1078</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <h2>1º Tópico</h2>
+                                        <h3>Técnica T1078 - Contas Válidas (Valid Accounts)</h3>
+                                        <p>
+                                            A técnica <strong>T1078 - Contas válidas (Valid Accounts)</strong> é descrita pelo MITRE ATT&amp;CK:
+                                        </p>
+                                        <p>
+                                            <a href="https://attack.mitre.org/techniques/T1078/" target="_blank" rel="noopener noreferrer">
+                                                https://attack.mitre.org/techniques/T1078/
+                                            </a>
+                                        </p>
+
+                                        <div class="article-quote">
+                                            <p>
+                                                Os adversários podem obter e abusar de credenciais de contas existentes como forma de obter acesso inicial,
+                                                persistência, escalonamento de privilégios ou evasão de defesa. Credenciais comprometidas podem ser usadas para
+                                                ignorar controles de acesso colocados em vários recursos em sistemas dentro da rede e podem até ser usadas para
+                                                acesso persistente a sistemas remotos e serviços disponíveis externamente, como VPNs, Outlook Web Access,
+                                                dispositivos de rede e área de trabalho remota.
+                                            </p>
+                                            <p>
+                                                Em alguns casos, os adversários podem abusar de contas inativas, por exemplo, aquelas pertencentes a indivíduos
+                                                que não fazem mais parte de uma organização. O uso dessas contas pode permitir que o adversário evite a detecção,
+                                                pois o usuário original da conta não estará presente para identificar qualquer atividade anômala.
+                                            </p>
+                                            <p>
+                                                A sobreposição de permissões para contas locais, de domínio e de nuvem em uma rede de sistemas é preocupante
+                                                porque o adversário pode conseguir alternar entre contas e sistemas para atingir um alto nível de acesso,
+                                                como administrador de domínio ou empresarial, ignorando controles de acesso definidos dentro da empresa.
+                                            </p>
+                                        </div>
+
+                                        <div class="article-grid">
+                                            <section class="article-subpanel">
+                                                <h4>Caso de exemplo</h4>
+                                                <p>Ataque de energia elétrica na Ucrânia em 2015.</p>
+                                            </section>
+
+                                            <section class="article-subpanel">
+                                                <h3>Estratégias de Mitigação</h3>
+                                                <ol class="article-ordered-list">
+                                                    <li>
+                                                        <strong>Políticas de uso da conta:</strong> Use políticas de acesso condicional para bloquear logins de dispositivos
+                                                        não compatíveis ou de intervalos de IP fora das organizações definidas.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Configuração do Active Directory:</strong> Desative a autenticação legada, que não suporta MFA, e exija o uso
+                                                        de protocolos de autenticação modernos.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Orientação para desenvolvedores de aplicativos:</strong> Certifique-se de que os aplicativos não armazenem
+                                                        dados confidenciais ou credenciais de forma insegura, como credenciais em texto claro, publicadas em repositórios
+                                                        ou armazenadas em nuvem pública.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Autenticação multifatorial:</strong> Implemente MFA em todos os tipos de conta, incluindo contas padrão,
+                                                        locais, de domínio e na nuvem, para evitar acesso não autorizado mesmo que as credenciais sejam comprometidas.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Políticas de senha:</strong> Aplicativos e dispositivos que utilizam nome de usuário e senha padrão devem ser
+                                                        alterados imediatamente após a instalação e antes da implantação em produção. Sempre que possível, chaves SSH devem
+                                                        ser atualizadas periodicamente e protegidas adequadamente.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Gestão de contas privilegiadas:</strong> Audite contas locais e de domínio, bem como seus níveis de permissão,
+                                                        para identificar situações que permitam amplo acesso por meio de credenciais privilegiadas comprometidas.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Gerenciamento de contas de usuário:</strong> Audite regularmente as contas de usuários em busca de atividades
+                                                        suspeitas e desative ou remova aquelas que não são mais necessárias.
+                                                    </li>
+                                                    <li>
+                                                        <strong>Treinamento do usuário:</strong> Treine os usuários para aceitarem apenas notificações push válidas no MFA e
+                                                        relatar solicitações suspeitas.
+                                                    </li>
+                                                </ol>
+                                            </section>
+                                        </div>
+
+                                        <div class="article-subpanel">
+                                            <h3>Estratégia de Detecção</h3>
+                                            <p>Detecção de abuso de conta válida em diferentes plataformas:</p>
+
+                                            <ul class="article-detection-list">
+                                                <li>
+                                                    <span class="code-tag">AN1543</span>
+                                                    <p>Detecção de contas válidas comprometidas ou mal utilizadas por meio de padrões de logon anômalos, tipos de logon anormais e atividades geográficas ou baseadas em tempo inconsistentes nos endpoints do Windows.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="code-tag">AN1544</span>
+                                                    <p>Detecção de uso indevido de conta válida por meio de logins SSH, abuso de sudo/su e anomalias de conta de serviço fora dos padrões esperados.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="code-tag">AN1545</span>
+                                                    <p>Detecção de logins interativos e remotos por contas de serviço ou usuários em momentos incomuns, com atividade inesperada de processo filho.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="code-tag">AN1546</span>
+                                                    <p>Detecção de abuso de conta válida em logs de IdP por meio de anomalias geográficas, viagens impossíveis, logins arriscados e múltiplas tentativas ou falhas de MFA.</p>
+                                                </li>
+                                                <li>
+                                                    <span class="code-tag">AN1547</span>
+                                                    <p>Detecção de contas de serviço em contêineres ou kubeconfigs comprometidos sendo usados para acesso ao cluster a partir de nós ou IPs inesperados.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">02</span>
+                                        <span class="article-accordion-title">Exposição de portas e serviços (Shodan/scanning)</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1046</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para exposição indevida de portas e serviços.</p>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">03</span>
+                                        <span class="article-accordion-title">Exploração de vulnerabilidades (CVE em câmeras/DVR)</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1190</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para exploração de vulnerabilidades em dispositivos IP.</p>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">04</span>
+                                        <span class="article-accordion-title">Ataques de replay/clonagem de RFID</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1557</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para ataques de replay e clonagem de RFID.</p>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">05</span>
+                                        <span class="article-accordion-title">Engenharia social</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1566</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para cenários de engenharia social.</p>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">06</span>
+                                        <span class="article-accordion-title">Ataques via rede interna (Pivot Lateral)</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1021 / TA0008</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para movimentos laterais em redes internas.</p>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">07</span>
+                                        <span class="article-accordion-title">Ataques MITM / Interceptação</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1557 (Man-in-the-Middle)</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para ataques de interceptação e man-in-the-middle.</p>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details class="article-accordion-item">
+                                <summary class="article-accordion-summary">
+                                    <span class="article-accordion-main">
+                                        <span class="article-accordion-index">08</span>
+                                        <span class="article-accordion-title">Ataques de negação de serviço (DoS)</span>
+                                    </span>
+                                    <span class="article-accordion-side">
+                                        <span class="mitre">MITRE ATT&amp;CK: T1498</span>
+                                        <span class="article-accordion-icon" aria-hidden="true"></span>
+                                    </span>
+                                </summary>
+                                <div class="article-accordion-content">
+                                    <div class="article-accordion-body">
+                                        <p class="article-placeholder">Detalhamento deste tópico em construção. Em breve esta seção trará contexto técnico, impactos e mitigação para ataques de negação de serviço.</p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                    <div class="project-footer">
+                        <div class="post-tags">
+                            <span>MITRE ATT&amp;CK</span>
+                            <span>Segurança IP</span>
+                            <span>Credenciais</span>
+                            <span>Detecção</span>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-active">Rascunho publicado</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="cyber-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/patrickinc" class="social-icon" data-text="GITHUB">GITHUB</a>
+                <a href="https://www.linkedin.com/in/paulo-patrick-rodrigues-a88534259/" class="social-icon" data-text="LINKEDIN">LINKEDIN</a>
+                <a href="https://phiz.chat/u/rtKll7" class="social-icon" data-text="TWITTER">PHIZ</a>
+            </div>
+        </div>
+        <div class="terminal-line">
+            <span class="prompt">patrickinc@defesa_cibernetica:~</span>
+            <span class="command">cat sobre.txt</span>
+            <span class="cursor">|</span>
+        </div>
+        <div class="cyber-clock">
+            <div class="clock-info">
+                <div id="digital-clock">00:00:00</div>
+                <div id="digital-date">5 de abril de 2026</div>
+            </div>
+        </div>
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao topo">
+            <span class="arrow">↑</span>
+        </button>
+    </footer>
+
+    <script src="../particles.js"></script>
+    <script src="../main.js"></script>
+</body>
+</html>

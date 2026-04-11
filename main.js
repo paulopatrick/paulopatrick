@@ -244,6 +244,28 @@ function initCarousels() {
     });
 }
 
+function initAccordions() {
+    const accordionGroups = document.querySelectorAll('[data-accordion-group]');
+
+    accordionGroups.forEach((group) => {
+        const items = Array.from(group.querySelectorAll('.article-accordion-item'));
+
+        items.forEach((item) => {
+            item.addEventListener('toggle', () => {
+                if (!item.open) {
+                    return;
+                }
+
+                items.forEach((otherItem) => {
+                    if (otherItem !== item) {
+                        otherItem.open = false;
+                    }
+                });
+            });
+        });
+    });
+}
+
 // Inicializa todos os efeitos quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', function() {
     // Remove loader quando a página carrega
@@ -261,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initImageModal();
     initCarousels();
+    initAccordions();
     
     // Efeito de terminal no footer
     const terminalLine = document.querySelector('.terminal-line .command');
